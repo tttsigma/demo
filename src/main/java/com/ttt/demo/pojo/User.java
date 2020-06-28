@@ -1,14 +1,20 @@
 package com.ttt.demo.pojo;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user")
+@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 public class User {
-    int id;
-    @JsonProperty("username")
-    String username;
-    @JsonProperty("password")
-    String password;
+    private int id;
+    private String name;
+    private String password;
 
+    @Id
     public int getId() {
         return id;
     }
@@ -17,12 +23,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String username) {
+        this.name = username;
     }
 
     public String getPassword() {
