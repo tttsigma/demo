@@ -24,7 +24,7 @@ public class LoginController {
         String username = requestUser.getName();
         username = HtmlUtils.htmlEscape(username);
 
-        User user = userService.getByNameAndPassword(requestUser.getName(),requestUser.getPassword());
+        User user = userService.getByNameAndPassword(username,requestUser.getPassword());
 
         if (user == null) {
             String message = "账号密码错误";

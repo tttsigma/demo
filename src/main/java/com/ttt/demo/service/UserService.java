@@ -17,14 +17,18 @@ public class UserService {
     }
 
     public User getByNameAndPassword(String name,String password){
-        return userDAO.findAllByNameAndAndPassword(name,password);
+        return userDAO.findAllByNameAndPassword(name,password);
+    }
+
+    public User getById(int id){
+        return userDAO.findById(id);
     }
 
     public void add(User user){
         userDAO.save(user);
     }
 
-    public void delete(User user){
-        userDAO.delete(user);
+    public void delete(int id){
+        userDAO.delete(getById(id));
     }
 }
