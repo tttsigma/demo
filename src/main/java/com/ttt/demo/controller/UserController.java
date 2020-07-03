@@ -1,6 +1,7 @@
 package com.ttt.demo.controller;
 
 import com.ttt.demo.pojo.User;
+import com.ttt.demo.result.Result;
 import com.ttt.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,18 +24,18 @@ public class UserController {
                 .allowedHeaders("*");
     }*/ // todo ?
     @GetMapping("/api/user/all")
-    public List<User> getAllUser(){
+    public List<User> getAllUser() {
         return userService.getAllUsers();
     }
 
     @CrossOrigin
     @DeleteMapping("/api/user/{id}")
-    public String delete(@PathVariable("id")int id){
-        if(userService.getById(id) == null){
-            return "-1";
-        }else {
+    public Result delete(@PathVariable("id") int id) {
+        if (userService.getById(id) == null) {
+            return new Result(400);
+        } else {
             userService.delete(id);
-            return null;
+            return new Result(200);
         }
     }
 
