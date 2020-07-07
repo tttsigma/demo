@@ -48,7 +48,7 @@ public class UserController {
 
     @CrossOrigin
     @PutMapping("/api/user/{id}")
-    public Result update(User bean){
+    public Result update(@RequestBody User bean){
         userService.update(bean);
         return new Result(200);
     }
