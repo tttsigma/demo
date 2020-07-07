@@ -31,4 +31,8 @@ public class UserService {
     public void delete(int id){
         userDAO.delete(getById(id));
     }
+
+    public void update(User bean){
+        userDAO.save(bean);
+    }
 }

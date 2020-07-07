@@ -39,5 +39,19 @@ public class UserController {
         }
     }
 
+    @CrossOrigin
+    @PostMapping("/api/user")
+    public Result add(@RequestBody User bean){
+        userService.add(bean);
+        return new Result(200);
+    }
+
+    @CrossOrigin
+    @PutMapping("/api/user/{id}")
+    public Result update(User bean){
+        userService.update(bean);
+        return new Result(200);
+    }
+
 
 }
