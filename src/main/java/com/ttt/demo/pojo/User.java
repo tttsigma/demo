@@ -2,9 +2,8 @@ package com.ttt.demo.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.websocket.ClientEndpoint;
 
 @Entity
 @Table(name = "user")
@@ -13,8 +12,11 @@ public class User {
     private int id;
     private String name;
     private String password;
+    private Role role;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -37,5 +39,16 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    @ManyToOne
+    @JoinColumn(name="rid")
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

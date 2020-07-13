@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Role {
     private int id;
     private String name;
-    private String roleDesc;
+    private String desc;
 
     @Id
     @Column(name = "id")
@@ -34,13 +34,13 @@ public class Role {
     }
 
     @Basic
-    @Column(name = "role_desc")
-    public String getRoleDesc() {
-        return roleDesc;
+    @Column(name = "desc")
+    public String getDesc() {
+        return desc;
     }
 
-    public void setRoleDesc(String roleDesc) {
-        this.roleDesc = roleDesc;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     @Override
@@ -50,11 +50,11 @@ public class Role {
         Role role = (Role) o;
         return id == role.id &&
                 Objects.equals(name, role.name) &&
-                Objects.equals(roleDesc, role.roleDesc);
+                Objects.equals(desc, role.desc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, roleDesc);
+        return Objects.hash(id, name, desc);
     }
 }
