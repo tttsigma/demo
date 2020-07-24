@@ -1,0 +1,19 @@
+GET http://localhost:8443/api/user/all
+Accept: application/json
+
+###
+POST http://localhost:8443/api/user
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "testing",
+  "password": "123",
+  "role": {
+    "id": 1,
+    "name": "admin",
+    "desc": "经理"
+  }
+}
+
+###

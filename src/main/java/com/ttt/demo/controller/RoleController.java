@@ -5,6 +5,7 @@ import com.ttt.demo.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -15,7 +16,13 @@ public class RoleController {
 
     @CrossOrigin
     @GetMapping("/api/role/all")
-    public List<Role> getAllRole(){
-        return roleService.getRoleList();
+    public List<String> getAllRoleName(){
+        return roleService.getRoleNameList();
+    }
+
+    @CrossOrigin
+    @GetMapping("/api/role/{name}")
+    public Role getRoleByName(@PathVariable("name")String name){
+        return roleService.getRoleByName(name);
     }
 }
