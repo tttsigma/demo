@@ -1,7 +1,14 @@
+#测试获取全部角色
+GET http://localhost:8443/api/role/all
+Accept: application/json
+
+###
+#测试获取全部用户
 GET http://localhost:8443/api/user/all
 Accept: application/json
 
 ###
+#测试增加用户
 POST http://localhost:8443/api/user
 Content-Type: application/json
 

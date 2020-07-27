@@ -26,7 +26,11 @@ public class RoleService {
         return result;
     }
 
-    public Role getRoleByName(String name){
+    public Role getRoleByName(String name) {
         return roleDAO.getByName(name);
+    }
+
+    public void add(Role role) {
+        roleDAO.save(role);
     }
 }
