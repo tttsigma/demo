@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "role")
-@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
+@JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
 public class Role {
     private int id;
     private String name;
@@ -35,7 +35,7 @@ public class Role {
     }
 
     @Basic
-    @Column(name = "desc")
+    @Column(name = "description")
     public String getDesc() {
         return desc;
     }

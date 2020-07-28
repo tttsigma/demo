@@ -29,4 +29,13 @@ public class RoleController {
     public Role getRoleByName(@PathVariable("name")String name){
         return roleService.getRoleByName(name);
     }
+
+    @CrossOrigin
+    @PostMapping("/api/role")
+    public Result add(@RequestBody Role bean){
+        bean.setName("test");
+        bean.setDesc("test11");
+        roleService.add(bean);
+        return new Result(200);
+    }
 }

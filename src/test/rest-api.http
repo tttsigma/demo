@@ -24,3 +24,13 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:8443/api/role
+Content-Type: application/json
+
+{
+  "role": {
+    "id": 0,
+    "name": "test",
+    "desc": "test11"
+  }
+}
