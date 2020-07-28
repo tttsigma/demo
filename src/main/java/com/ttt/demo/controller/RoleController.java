@@ -33,8 +33,6 @@ public class RoleController {
     @CrossOrigin
     @PostMapping("/api/role")
     public Result add(@RequestBody Role bean){
-        bean.setName("test");
-        bean.setDesc("test11");
         roleService.add(bean);
         return new Result(200);
     }

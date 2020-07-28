@@ -28,9 +28,7 @@ POST http://localhost:8443/api/role
 Content-Type: application/json
 
 {
-  "role": {
-    "id": 0,
-    "name": "test",
-    "desc": "test11"
-  }
+  "id": 0,
+  "name": "test222",
+  "desc": "test11"
 }
