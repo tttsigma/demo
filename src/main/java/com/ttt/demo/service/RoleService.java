@@ -30,7 +30,15 @@ public class RoleService {
         return roleDAO.getByName(name);
     }
 
+    public Role getRoleById(int id){
+        return roleDAO.getById(id);
+    }
+
     public void add(Role role) {
         roleDAO.save(role);
+    }
+
+    public void delete(int id){
+        roleDAO.delete(getRoleById(id));
     }
 }
