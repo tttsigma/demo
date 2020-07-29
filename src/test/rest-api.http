@@ -1,9 +1,38 @@
 ###
+#测试更新用户
+PUT http://localhost:8443/api/user/{{id}}
+Content-Type: application/json
+
+{
+  "id": 4,
+  "name": "testing",
+  "password": "123",
+  "role": {
+    "id": 1,
+    "name": "admin",
+    "desc": "经理"
+  }
+}
+
+###
+#测试更新角色
+PUT http://localhost:8443/api/role/{{id}}
+Content-Type: application/json
+
+{
+  "id": 17,
+  "name": "aaa",
+  "desc": "11"
+}
+
+
+###
 DELETE http://localhost:8443/api/user/{{id}}
 
 ###
 DELETE http://localhost:8443/api/role/{{id}}
 
+###
 #测试获取全部角色
 GET http://localhost:8443/api/role/all
 Accept: application/json
@@ -30,6 +59,7 @@ Content-Type: application/json
 }
 
 ###
+#测试增加角色
 POST http://localhost:8443/api/role
 Content-Type: application/json
 

@@ -48,4 +48,11 @@ public class RoleController {
             return new Result(200);
         }
     }
+
+    @CrossOrigin
+    @PutMapping("/api/role/{id}")
+    public Result update(@RequestBody Role bean){
+        roleService.update(bean);
+        return new Result(200);
+    }
 }

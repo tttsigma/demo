@@ -41,4 +41,8 @@ public class RoleService {
     public void delete(int id){
         roleDAO.delete(getRoleById(id));
     }
+
+    public void update(Role role){
+        roleDAO.save(role);
+    }
 }
