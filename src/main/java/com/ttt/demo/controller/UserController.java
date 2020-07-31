@@ -3,11 +3,14 @@ package com.ttt.demo.controller;
 import com.ttt.demo.pojo.User;
 import com.ttt.demo.result.Result;
 import com.ttt.demo.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api(value = "User-API")
 @RestController
 public class UserController {
     @Autowired
@@ -23,6 +26,7 @@ public class UserController {
                 .allowedMethods("*")
                 .allowedHeaders("*");
     }*/ // todo ?
+    @ApiOperation(value = "获取用户列表", notes = "返回List<User>类型用户信息的JSON")
     @GetMapping("/api/user/all")
     public List<User> getAllUser() {
         return userService.getAllUsers();
