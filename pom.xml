@@ -50,12 +50,19 @@
             <version>5.1.21</version>
         </dependency>
 
+        <!-- swagger 2-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
         <!-- swagger ui -->
         <dependency>
-            <groupId>com.didispace</groupId>
-            <artifactId>spring-boot-starter-swagger</artifactId>
-            <version>1.1.0.RELEASE</version>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
         </dependency>
+
     </dependencies>
 
     <build>
