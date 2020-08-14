@@ -14,5 +14,6 @@ public class UserServiceTest extends DemoApplicationTests {
     public void getUser() {
         User user = userService.getById(1);
         Assert.assertEquals("admin", user.getName());
+        System.out.println("test");
     }
 }
